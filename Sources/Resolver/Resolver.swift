@@ -339,7 +339,7 @@ public final class Resolver {
 private final class ResolverRecursiveLock {
     init() {
         pthread_mutexattr_init(&recursiveMutexAttr)
-        pthread_mutexattr_settype(&recursiveMutexAttr, PTHREAD_MUTEX_RECURSIVE)
+        pthread_mutexattr_settype(&recursiveMutexAttr, .init(PTHREAD_MUTEX_RECURSIVE))
         pthread_mutex_init(&recursiveMutex, &recursiveMutexAttr)
     }
     @inline(__always)
